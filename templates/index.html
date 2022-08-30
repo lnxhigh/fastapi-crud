@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Welcome</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for('static', path='style.css')}}">
+    </head>
+
+    <body>  
+        <a href="/"><img src="{{url_for('static', path='logo.png')}}"></a>
+        <div class="contents">
+            <div class="lists">
+                <ul>
+                    {% autoescape false %}
+                    {{ lists }}
+                    {% endautoescape %}
+                </ul>    
+            </div>
+            <div class="content">
+                <h2>Python</h2>
+                Python is a high-level, interpreted, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation.Python is dynamically-typed and garbage-collected. It supports multiple programming paradigms, including structured (particularly procedural), object-oriented and functional programming. It is often described as a "batteries included" language due to its comprehensive standard library.
+            </div>
+        </div>
+        <div class="buttons">
+            <input class="button" type="button" value="create" onclick="location.href='/create'">
+        </div>
+    </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for('static', path='style.css')}}">
+    </head>
+
+    <body>  
+        <a href="/"><img src="{{url_for('static', path='logo.png')}}"></a>
+        <div class="contents">
+            <div class="lists">
+                <ul>
+                    {% autoescape false %}
+                    {{ lists }}
+                    {% endautoescape %}
+                </ul>    
+            </div>
+            <div class="content">
+                <h2>{{ title }}</h2>
+                {{ content }}
+            </div>
+        </div>
+        <div class="buttons">
+            <input class="button" type="button" value="update" onclick="
+                window.location.href = '/update/{{id}}'
+            ">
+            <form action="/delete" method="post">
+                <input class="button" type="hidden" value="{{id}}" name="id">
+                <input class="button" type="submit" value="delete" onclick="return confirm('Do you really want to delete the document?');">
+            </form>
+        </div>
+    </body>
+</html>

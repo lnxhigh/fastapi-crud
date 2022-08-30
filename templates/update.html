@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{ title }}</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="{{url_for('static', path='style.css')}}">
+    </head>
+
+    <body>  
+        <a href="/"><img src="{{url_for('static', path='logo.png')}}"></a>
+        <div class="contents">
+            <div class="lists">
+                <ul>
+                    {% autoescape false %}
+                    {{ lists }}
+                    {% endautoescape %}
+                </ul>    
+            </div>
+            
+            <form method="post">
+                <div class="content">
+                    <p><input type="text" value='{{ title }}' placeholder="Title" name="title" style="font-size: 48px;"></p>
+                    <p><textarea name="description" rows='10' cols='70' placeholder="Description"  
+                        style="font-size: 30px; font-family: 'serif';">{{ description }}</textarea></p>
+                    <p><input class="button" type="submit" value="submit"></p>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>

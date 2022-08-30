@@ -1,0 +1,43 @@
+h1 {
+    color: blue;
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+}
+.button {
+    margin: 20px;
+    font-size: 50px;
+}
+
+.lists {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 30px;
+    
+    padding-left: 20px;
+    padding-right: 100px;
+    border: solid;
+    
+}
+
+.contents {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.content {
+    padding: 40px;
+    padding-top: 0px;
+    border-style: solid;
+    font-size: 30px;
+}
